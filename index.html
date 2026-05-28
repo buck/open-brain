@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Open Brain: From Screenshot to Architecture</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/theme/moon.min.css">
+<style>
+  .reveal h1 { font-size: 1.8em; }
+  .reveal h2 { font-size: 1.4em; color: #adf; }
+  .reveal h3 { font-size: 1.1em; color: #9cf; }
+  .reveal p, .reveal li { font-size: 0.78em; line-height: 1.5; }
+  .reveal pre code { font-size: 0.75em; max-height: 420px; }
+  .reveal table { font-size: 0.8em; }
+  .reveal table th { background: #334; }
+  .reveal .fragment.highlight-current-blue.current-fragment { color: #6cf; }
+  .big-link { font-size: 1.4em !important; }
+  .dim { color: #888; }
+  .aside { font-size: 0.7em !important; color: #aaa; font-style: italic; }
+  .callout { background: #1a2a3a; border-left: 4px solid #6af; padding: 0.6em 1em; border-radius: 4px; margin: 0.5em 0; }
+  img.fill { max-height: 520px; width: auto; }
+  img.full { width: 90%; max-height: 500px; object-fit: contain; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1em; text-align: left; }
+</style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART 1: THE STARTING POINT -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<section>
+  <h1>Open Brain</h1>
+  <h2>From screenshot to architecture<br>without reading the guide</h2>
+  <br>
+  <p class="aside">a vibe coding story</p>
+</section>
+
+<section>
+  <h2>Today's topic: "building a second brain"</h2>
+  <br>
+  <p>The usual answer is <strong>Obsidian</strong>.</p>
+  <br>
+  <p>Obsidian is good. Notes, links, graph view, markdown. Local files. You own your data.</p>
+  <br>
+  <p class="callout">But Obsidian is a <strong>notes app</strong>. Your AI assistant doesn't know what's in it. Every new conversation starts from zero.</p>
+</section>
+
+<section>
+  <h2>A different question</h2>
+  <br>
+  <p>What if every AI tool you use — Claude, ChatGPT, Cursor, whatever ships next month — shared the same persistent memory of you?</p>
+  <br>
+  <p>Not a notes app. An <strong>infrastructure layer</strong>.</p>
+  <br>
+  <p class="aside">One database. One open protocol. Any AI can plug in.</p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- THE SPARK -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<section>
+  <h2>It started here</h2>
+  <br>
+  <p><strong>Nate B Jones</strong> — "Build Your Open Brain" (Substack + YouTube)</p>
+  <br>
+  <p>His challenge: <em>"I showed enough in the video that you could vibe code your own solution."</em></p>
+  <br>
+  <p class="big-link">
+    <a href="https://www.youtube.com/watch?v=2JiMmye2ezg&t=108s" target="_blank">▶ Watch the moment →</a>
+  </p>
+  <p class="aside">(YouTube, starts at 1:48 — the companion guide appears on screen)</p>
+</section>
+
+<section>
+  <h2>The companion guide appears on screen</h2>
+  <img class="full" src="nate.png" alt="Screenshot of Nate's video showing the companion guide">
+  <p class="aside">I could see it. I didn't download it. That was enough.</p>
+</section>
+
+<section>
+  <h2>Close enough to read</h2>
+  <img class="fill" src="nate_doc.png" alt="Zoomed view of the companion guide text">
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- THE GUIDE TEXT -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<section>
+  <h2>What the guide says (page 1)</h2>
+  <div class="callout">
+    <p><strong>Build Your Open Brain</strong> — Complete Setup Guide</p>
+    <p>The infrastructure layer for your thinking. One database, one AI gateway, one chat channel. Any AI you use can plug in. No middleware, no SaaS chains, no Zapier.</p>
+    <p>This isn't a notes app. It's a database with vector search and an open protocol — built so that every AI tool you use shares the same persistent memory of you. Claude, ChatGPT, Cursor, Claude Code, whatever ships next month. One brain. All of them.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What you're building (per Nate)</h2>
+  <p>A Slack channel where you type a thought — it automatically gets embedded, classified, and stored in your database — you get a confirmation reply showing what was captured.</p>
+  <p>Then an MCP server that lets any AI assistant search your brain by meaning.</p>
+  <div class="two-col">
+    <div>
+      <p><strong>Services (all free tier):</strong></p>
+      <ul>
+        <li>Supabase — database</li>
+        <li>OpenRouter — AI gateway</li>
+        <li>Slack — capture interface</li>
+      </ul>
+    </div>
+    <div>
+      <p><strong>Time estimate:</strong></p>
+      <p>~45 minutes, zero coding experience, copy-paste everything.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- THE VIBE CODING MOVE -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<section>
+  <h2>The vibe coding move</h2>
+  <br>
+  <p>I subscribe to Nate's Substack. The full companion guide is sitting in my inbox.</p>
+  <br>
+  <p class="callout"><strong>I never opened it.</strong></p>
+  <br>
+  <p>Instead I took the screenshot, opened Claude Code, and said:<br><em>"Explain this and help me build it for my setup."</em></p>
+  <br>
+  <p class="aside">Everything from here is what came out of that conversation.</p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART 2: THE ARCHITECTURE -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<section>
+  <h2>First: what problem is this actually solving?</h2>
+  <br>
+  <p>Obsidian (and every notes app) has a handoff problem.</p>
+  <ul>
+    <li>Your notes are in one place</li>
+    <li>Your AI is in another</li>
+    <li>You copy-paste, summarize, or just forget to share context</li>
+  </ul>
+  <br>
+  <p>Open Brain removes the handoff. The AI <em>is</em> connected to your memory. Always.</p>
+</section>
+
+<section>
+  <h2>How embeddings work</h2>
+  <p class="aside">(the piece I had to have explained)</p>
+  <p>You send text to an API. You get back a list of ~1500 numbers — a <strong>vector</strong>.</p>
+  <pre><code class="python">response = client.embeddings.create(
+    model="text-embedding-3-small",
+    input="I want to learn piano"
+)
+vector = response.data[0].embedding  # 1536 floats
+# [0.023, -0.411, 0.087, 0.342, ...]
+</code></pre>
+  <p>You never look at the numbers. You store them next to the original text.</p>
+</section>
+
+<section>
+  <h2>How search works</h2>
+  <br>
+  <p>When you search, you embed the query the same way — same 1500-number format.</p>
+  <br>
+  <p>Then find which stored vectors are <strong>geometrically close</strong>.</p>
+  <br>
+  <div class="callout">
+    <p>"music hobbies" → finds notes about piano, even if you never typed "music"</p>
+  </div>
+  <br>
+  <p>Matches by <strong>meaning</strong>, not keywords. That's the whole trick.</p>
+  <p class="aside">The model you use for storing and searching must be the same — different models produce incompatible spaces.</p>
+</section>
+
+<section>
+  <h2>The stack</h2>
+  <br>
+  <table>
+    <thead><tr><th>Component</th><th>Nate's guide</th><th>My version</th></tr></thead>
+    <tbody>
+      <tr><td>Capture</td><td>Slack</td><td>Telegram (already have a bot)</td></tr>
+      <tr><td>AI gateway</td><td>OpenRouter</td><td>OpenRouter</td></tr>
+      <tr><td>Database</td><td>Supabase + pgvector</td><td>Supabase + pgvector</td></tr>
+      <tr><td>Hosting</td><td>(unspecified)</td><td>Home server, runs 24/7</td></tr>
+      <tr><td>Language</td><td>(unspecified)</td><td>Python</td></tr>
+    </tbody>
+  </table>
+  <br>
+  <p class="aside">Substituting Telegram for Slack was the main adaptation. Everything else follows Nate's design.</p>
+</section>
+
+<section>
+  <h2>The MCP layer — why any AI can use it</h2>
+  <p>MCP (Model Context Protocol) is an open standard. An AI tool that supports MCP can call tools you expose.</p>
+  <p>The MCP server hides all the embedding machinery. A calling model just sends plain text, gets plain text back:</p>
+  <div class="callout">
+    <code>search_brain("what have I said about learning music?")</code><br>
+    <code>→ [returns relevant memories as text]</code>
+  </div>
+  <p>Claude, ChatGPT, Cursor — any of them can call this without knowing or caring about vectors.</p>
+</section>
+
+<section>
+  <h2>Build order: 3 steps</h2>
+  <br>
+  <ol>
+    <li>
+      <strong>Supabase setup</strong> — enable pgvector extension, create memories table
+      <p class="aside">Just a Postgres database. pgvector is an extension, not a separate service.</p>
+    </li>
+    <li>
+      <strong>Ingest handler</strong> — Telegram message → embed → insert → confirmation reply
+      <p class="aside">Working capture pipeline. Type a thought, it lands in your brain.</p>
+    </li>
+    <li>
+      <strong>MCP server</strong> — accepts text query, embeds it, similarity search, returns results
+      <p class="aside">The payoff. Now every AI tool you use can search your memory.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PART 3: THE PERSONAL ANGLE -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<section>
+  <h2>But here's where it gets interesting</h2>
+  <br>
+  <p>The guide gets you a capture-and-search system for new thoughts.</p>
+  <br>
+  <p>I have 20 years of old data to bring into it.</p>
+</section>
+
+<section>
+  <h2>20 years of saved web pages</h2>
+  <br>
+  <p>Since the early 2000s I've saved copies of web pages I found interesting — a kind of personal archive.</p>
+  <br>
+  <p>That's 10,000–20,000 pages. No labels, no categories. Just "past me thought this was worth keeping."</p>
+  <br>
+  <div class="callout">
+    <strong>The key insight:</strong> those saved pages are a labeled dataset — I just never had to label them.
+    <br><br>
+    Every saved page is implicitly tagged: <em>"this person found this interesting."</em>
+  </div>
+</section>
+
+<section>
+  <h2>The interestingness filter</h2>
+  <p>Embed all saved pages → load them into Open Brain</p>
+  <p>For any new article or Hacker News post:</p>
+  <ol>
+    <li>Embed the title + summary</li>
+    <li>Find nearest neighbors in the saved pages corpus</li>
+    <li>Average similarity score = <strong>interestingness score</strong></li>
+  </ol>
+  <p class="callout">No training step. No labels. Your 20-year curation history <em>is</em> the model.</p>
+  <p class="aside">This was not in Nate's guide. It came out of the same conversation about what I could do with this architecture.</p>
+</section>
+
+<section>
+  <h2>Other data sources that could feed this</h2>
+  <br>
+  <div class="two-col">
+    <div>
+      <p><strong>ChatGPT export</strong></p>
+      <p>Settings → Data Controls → Export<br>Years of conversations in one JSON file. Probably under a few hundred MB. Cost to embed it all: under $1.</p>
+      <p class="aside">Embed only your own messages for purest personal signal.</p>
+    </div>
+    <div>
+      <p><strong>Anything else you've typed</strong></p>
+      <p>Obsidian vault, old emails, journal entries, bookmarks, browser history...</p>
+      <p>If it's text, it's embeddable. If it's yours, it's signal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- ALREADY IN PRODUCTION -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<section>
+  <h2>I haven't built Open Brain yet.<br>I'm already using the concept.</h2>
+  <p>In another project I'm tracking search results across hundreds of drug-related terms. A lot of what comes back is irrelevant — wrong context, wrong audience, passing mentions in lists.</p>
+  <p>Solution: embed a set of known-good, verified articles as seeds. Score each incoming article by cosine similarity against those seeds.</p>
+  <div class="callout">
+    Score ≥ 0.72 → relevant &nbsp;|&nbsp; Score ≤ 0.50 → skip &nbsp;|&nbsp; Middle → Claude decides
+  </div>
+  <p>Cost of the embedding relevance check: <strong>~$0.02/month.</strong> Built it because I understood how embeddings work.</p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- THE META POINT -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<section>
+  <h2>The meta-point about vibe coding</h2>
+  <p>I'm a competent technical person. But I had never worked with embeddings before. So I didn't just ask Claude to build it — I asked it to <strong>explain</strong> it first. Several rounds of questions.</p>
+  <p>It explained embeddings, the consistency rule, why pgvector isn't a special service, what MCP actually does. And then it offered to help build it too.</p>
+  <p>That explain step matters. Without it you're cargo-culting code you don't understand. Then your embedding model gets deprecated, you think you've lost everything, and you have no idea why you're safe (the text is the real data — you can re-embed). Or you switch models and can't figure out why search broke.</p>
+</section>
+
+<section>
+  <div class="callout">
+    Vibe coding isn't "write code without thinking." It's <em>compressing the distance between seeing a possibility and understanding it well enough to build it.</em>
+  </div>
+</section>
+
+<section>
+  <h2>What the AI contribution actually looked like</h2>
+  <br>
+  <ul>
+    <li>Explained what embeddings are and why the consistency rule matters</li>
+    <li>Explained pgvector (just a Postgres extension, not a new service)</li>
+    <li>Suggested substituting Telegram for Slack and why it's a clean swap</li>
+    <li>Explained MCP and why it makes the brain model-agnostic</li>
+    <li>Connected the "20 years of saved pages" observation to the interestingness filter idea</li>
+    <li>Produced this slide deck from the session notes</li>
+  </ul>
+  <br>
+  <p class="aside">The code hasn't been written yet. That's next. But the architecture is solid.</p>
+</section>
+
+<section>
+  <h2>What this requires (actually)</h2>
+  <table>
+    <thead><tr><th>Thing</th><th>Barrier</th></tr></thead>
+    <tbody>
+      <tr><td>Supabase account</td><td>Free tier, 5 minutes to create</td></tr>
+      <tr><td>OpenRouter account</td><td>Free tier, pay-as-you-go for embeddings (pennies)</td></tr>
+      <tr><td>Python</td><td>~50 lines for the ingest handler</td></tr>
+      <tr><td>Somewhere to run it</td><td>Home server, VPS, Raspberry Pi, Render free tier</td></tr>
+      <tr><td>MCP host</td><td>Claude Desktop or any MCP-compatible client</td></tr>
+    </tbody>
+  </table>
+  <p class="aside">Nate's guide is step-by-step copy-paste — no AI help, no coding experience needed, ~45 minutes by hand. With Claude Code cranking out the code from the architecture, probably faster.</p>
+</section>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- CLOSE -->
+<!-- ═══════════════════════════════════════════════════ -->
+
+<section>
+  <h2>Historical footnote</h2>
+  <br>
+  <p><strong>Google Desktop Search (2004–2011)</strong> was the previous attempt at this idea — index your own files, search them locally.</p>
+  <br>
+  <p>Google killed it in 2011. Probably a combination of privacy distrust and the rise of cloud storage.</p>
+  <br>
+  <p>Open Brain is the modern version: semantically richer (meaning-based, not keyword), more open (any AI can query via MCP), and ownable (you control the full stack).</p>
+</section>
+
+<section>
+  <h2>What would you build with it?</h2>
+  <br>
+  <p>The core is just: <em>your text, embedded, searchable by any AI you use.</em></p>
+  <br>
+  <p>Starting points:</p>
+  <ul>
+    <li>Personal notes that your AI assistant actually remembers</li>
+    <li>A filter for any feed based on your reading history</li>
+    <li>A "have I thought about this before?" tool for any new idea</li>
+    <li>A personal knowledge base that grows passively as you chat</li>
+  </ul>
+  <br>
+  <p class="aside">Source: <a href="https://www.youtube.com/watch?v=2JiMmye2ezg&t=108s" target="_blank">Nate B Jones — Build Your Open Brain</a></p>
+</section>
+
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: true,
+    controls: true,
+    progress: true,
+    center: true,
+    transition: 'slide'
+  });
+</script>
+</body>
+</html>
