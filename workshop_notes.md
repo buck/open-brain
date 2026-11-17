@@ -157,3 +157,59 @@ What makes a source good for a room of people:
    interestingness-filter idea becomes something people can try on their data.
 3. Early finishers and homework-doers load a ChatGPT or YouTube export they
    requested beforehand.
+
+---
+
+## Running the Room: Getting Newcomers Comfortable in Two Hours
+
+Claude's suggestions, 2026-11-17. The aim is wider than Open Brain: any
+two-hour session where people who have never built anything leave having built
+something simple from scratch. None of this is tested yet; the first
+Code4Y'all run is the test.
+
+### Design rules
+
+- **Something of theirs runs in the first 20 minutes.** Comfort comes from the
+  first success, so the opening step should be nearly impossible to fail.
+- **The spec is given; one choice is theirs.** The expired-patent list does
+  this well. A newcomer with an unlimited spec and no first step stalls before
+  writing anything.
+- **Accounts are where people drop out.** People asked to sign up for several
+  services on their own, before seeing anything work, tend to go quiet. Run a
+  20-minute setup clinic before the start, with helpers, instead of homework.
+- **Pair people up.** Two per laptop halves the stuck machines and the load on
+  the free limits, and nobody is stuck alone.
+- **Stop and check after every step.** The prompt already does this. Keep it.
+- **Count the result.** Record how many people reach step 4 (add and search)
+  and step 5 (MCP server) by the end. That number is the validation, and it is
+  what goes to the next venue.
+
+### Path
+
+1. **Dry run with one newcomer.** New email address, no payment card, a
+   Windows laptop, a novice at the keyboard. This is the only way to test what
+   a fresh account really gets.
+2. **Code4Y'all.** Low pressure. Ask for the slot as an experiment with a
+   reported finish count; the organizers don't need to be converted to vibe
+   coding first.
+3. **Houston AI Club build lab** (50–100 laptops). Mostly a helper problem:
+   perhaps one helper per ten people (a guess). Code4Y'all graduates are the
+   natural helpers.
+
+### Free-tier risks found 2026-11-17 (unverified against a fresh account)
+
+- **Supabase.** Projects created since 2026-05-30 don't expose `public` tables
+  to the REST API without an explicit `GRANT`
+  ([changelog](https://supabase.com/changelog/45329-breaking-change-tables-not-exposed-to-data-and-graphql-api-automatically)).
+  Grants for `service_role` were added to the workshop SQL (open-brain-workshop
+  5c74cfc).
+- **Voyage.** Without a card the limit is reported as about 3 requests a
+  minute; this came from search summaries, not the official rate-limit page.
+  The prompt now tells the agent to batch, wait and retry.
+- **OpenCode free models.** Limits are unpublished. A bot reply on
+  [issue #56523](https://github.com/anomalyco/opencode/issues/56523) says they
+  apply "to your account or network as a whole", so a room on one Wi-Fi might
+  share one allowance. Only a room test answers this; carry a phone hotspot.
+  The free models are also listed as free "for a limited time"
+  ([Zen docs](https://opencode.ai/docs/zen)), so check the default model still
+  exists the week before.
